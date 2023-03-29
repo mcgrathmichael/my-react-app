@@ -1,17 +1,5 @@
-import "./App.css";
 import MyTitle from "./components/MyTitle";
-import PokemonCard from "./components/PokemonCard";
-
-function App() {
-  let pokemon = pokemonList[0];
-
-  return (
-    <div>
-      <MyTitle />
-      <PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
-    </div>
-  );
-}
+import PokemonCard from "./PokemonCard";
 
 const pokemonList = [
   {
@@ -23,5 +11,17 @@ const pokemonList = [
     name: "mew",
   },
 ];
+
+function App() {
+  return (
+    <div>
+      <MyTitle />
+      <PokemonCard 
+      {name: pokemon.name},
+      {imgSrc: pokemon.imgSrc} 
+      />
+    </div>
+  );
+}
 
 export default App;
