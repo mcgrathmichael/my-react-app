@@ -19,8 +19,16 @@ function App() {
   return (
     <div>
       <PokemonCard pokemon={pokemon} />
-      <button onClick={nextClick}>Next</button>
-      <button onClick={prevClick}>Previous</button>
+      {pokemonIndex < 0 ? (
+        <display:none></display:none>
+      ) : (
+        <button onClick={prevClick}>Previous</button>
+      )}
+      {pokemonIndex < pokemonList.length - 1 ? (
+        <button onClick={nextClick}>Next</button>
+      ) : (
+        <display:none></display:none>
+      )}
     </div>
   );
 }
