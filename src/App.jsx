@@ -1,38 +1,33 @@
 import "./App.css";
 import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
+import Navbar from "./components/Navbar";
+import { useEffect } from "react";
 
 function App() {
-  let [pokemonIndex, setIndex] = useState(0);
+  useEffect(() => {
+    alert("Hello Pokémon Trainer! :D");
+  }, []);
 
-  function nextClick() {
-    setIndex(pokemonIndex + 1);
-  }
-  function prevClick() {
-    setIndex(pokemonIndex - 1);
-  }
+  const [pokemonIndex, setIndex] = useState(0);
+  let pokemon = pokemonList[pokemonIndex];
 
-  let pokemon = {
-    name: pokemonList[pokemonIndex].name,
-    imgSrc: pokemonList[pokemonIndex].imgSrc,
-  };
+  // function Navbar() {}
+  // name: pokemonList[pokemonIndex].name,
+  // imgSrc: pokemonList[pokemonIndex].imgSrc,
+
   return (
     <div>
       <PokemonCard pokemon={pokemon} />
-      {pokemonIndex < 0 ? (
-        <display:none></display:none>
-      ) : (
-        <button onClick={prevClick}>Previous</button>
-      )}
-      {pokemonIndex < pokemonList.length - 1 ? (
-        <button onClick={nextClick}>Next</button>
-      ) : (
-        <display:none></display:none>
-      )}
+      <Navbar
+        setIndex={setIndex}
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+        pokemon={pokemon}
+      />
     </div>
   );
 }
-
 const pokemonList = [
   {
     name: "bulbasaur",
