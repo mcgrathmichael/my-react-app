@@ -50,20 +50,43 @@
 
 // export default Navbar;
 
+// import { React, useState } from "react";
+
+// function Navbar({ pokemonList, setIndex }) {
+//   const [showPoke, setShowPoke] = useState(pokemonList[0]);
+
+//   const handleClick = (animal) => {
+//     setShowPoke(animal);
+//   };
+
+//   return (
+//     <div>
+//       {pokemonList.map((animal) => (
+//         <button key={animal.name} onClick={() => handleClick(animal)}>
+//           {animal.name}
+//         </button>
+//       ))}
+//       {showPoke ? <PokemonCard data={showPoke} /> : "Choose your Pokémon"}
+//     </div>
+//   );
+// }
+
+// export default Navbar;
+// Navbar.jsx
+
 import { React, useState } from "react";
-import PokemonCard from "./PokemonCard";
 
-function Navbar({ pokemonList }) {
-  const [showPoke, setShowPoke] = useState(pokemonList[0]);
+function Navbar({ pokemonList, setIndex }) {
+  // const [showPoke, setShowPoke] = useState(pokemonList[0]);
 
-  const handleClick = (animal) => {
-    setShowPoke(animal);
+  const handleClick = (index) => {
+    setIndex(index);
   };
 
   return (
     <div>
-      {pokemonList.map((animal) => (
-        <button key={animal.name} onClick={() => handleClick(animal)}>
+      {pokemonList.map((animal, index) => (
+        <button key={animal.name} onClick={() => handleClick(index)}>
           {animal.name}
         </button>
       ))}

@@ -1,11 +1,11 @@
-import MyTitle from "./components/MyTitle";
+// import MyTitle from "./components/MyTitle";
 
-function App() {
-  return (
-    <div>
-      <MyTitle />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <MyTitle />
+//     </div>
+//   );
+//
 
-export default App;
+// export default App;

@@ -3,24 +3,6 @@ import PokemonCard from "./components/PokemonCard";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 
-function App() {
-  const [pokemonIndex, setIndex] = useState(0);
-  let pokemon = pokemonList[pokemonIndex];
-  // function Navbar() {}
-  // name: pokemonList[pokemonIndex].name,
-  // imgSrc: pokemonList[pokemonIndex].imgSrc,
-
-  return (
-    <div>
-      {/* <PokemonCard pokemon={pokemon} /> */}
-      <Navbar
-        setIndex={setIndex}
-        pokemonList={pokemonList}
-        pokemonIndex={pokemonIndex}
-      />
-    </div>
-  );
-}
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -46,5 +28,24 @@ const pokemonList = [
     name: "mew",
   },
 ];
+
+function App() {
+  const [pokemonIndex, setIndex] = useState(0);
+  let pokemon = pokemonList[pokemonIndex];
+  // function Navbar() {}
+  // name: pokemonList[pokemonIndex].name,
+  // imgSrc: pokemonList[pokemonIndex].imgSrc,
+
+  return (
+    <div>
+      <PokemonCard pokemon={pokemon} />
+      <Navbar
+        setIndex={setIndex}
+        pokemonList={pokemonList}
+        pokemonIndex={pokemonIndex}
+      />
+    </div>
+  );
+}
 
 export default App;
